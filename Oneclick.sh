@@ -4,7 +4,11 @@ wget -O system.tar ftp://neodev.ddns.net/Files/Samsung/Offical/AP_G9500ZCS5DTC1_
 
 tar -xf system.tar
 
+rm -rf ./meta-data boot.img.lz4 persist.img.ext4.lz4 recovery.img.lz4 userdata.img.ext4.lz4 system.tar
+
 unlz4 system.img.ext4.lz4
+
+rm -rf system.img.ext4.lz4
 
 mkdir ./system
 
@@ -12,23 +16,29 @@ mkdir ./tempsystem
 
 simg2img system.img.ext4 system.img
 
-sudo mount -t ext4 -o loop system.img tempsystem/
+rm -rf system.img.ext4
 
-ls -lR ./tempsystem | grep " -> " > ./fic.txt
+sudo mount -t ext4 -o loop system.img tempsystem/
 
 sudo cp -rf ./tempsystem/* ./system/
 
 sudo umount ./tempsystem
 
-rm -rf ./tempsystem
+rm -rf ./tempsystem system.img
 
 wget -O csc.tar ftp://neodev.ddns.net/Files/Samsung/Offical/CSC_CHC_G9500CHC5DTC1_CL17975032_QB29748280_REV00_user_low_ship_MULTI_CERT.tar.md5
 
-tar -xf csc.tar
+tar -xf csc.tar 
+
+rm -rf ./meta-data DREAMQLTE_CHN_OPEN.pit csc.tar
 
 unlz4 cache.img.ext4.lz4
 
+rm -rf cache.img.ext4.lz4
+
 simg2img cache.img.ext4 cache.img
+
+rm -rf cache.img.ext4
 
 mkdir ./cache
 
@@ -40,11 +50,13 @@ sudo cp -rf ./csc/system/* ./system/
 
 sudo umount ./cache
 
-rm -rf ./cache
+rm -rf ./cache ./csc cache.img
 
 wget ftp://neodev.ddns.net/Files/Samsung/Offical/fix.zip
 
 unzip fix.zip
+
+rm -rf fix.zip
 
 cp -rf ./fix/drivers/* ./system/
 
@@ -52,9 +64,13 @@ cp -rf ./fix/model/9500/* ./system/
 
 cp -rf ./fix/fstab.qcom ./system/vendor/etc
 
+rm -rf ./fix
+
 wget ftp://neodev.ddns.net/Files/Samsung/Offical/META-INF.zip
 
 unzip META-INF.zip
+
+rm -rf META-INF.zip
 
 mkdir ./rootzip
 
@@ -63,5 +79,7 @@ wget -O ./rootzip/Magsik.zip https://github.com/topjohnwu/Magisk/releases/downlo
 wget -O boot.img wget ftp://neodev.ddns.net/Files/Samsung/Offical/G9500.img
 
 zip -r -y SamsungStockRom.zip ./META-INF ./rootzip ./system boot.img
+
+
 
 
