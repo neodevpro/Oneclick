@@ -2,11 +2,17 @@
 echo "   Welcome to use THis Tool "
 echo ""
 echo "    Power by Neodev Team"
+
 link="https://raw.githubusercontent.com/neodevpro/Oneclick/"
+sc="samcatcher.zip"
 f=".sh"
 d="download.sh"
+getc=$link$sc
 getd=$link$d
+
+wget $getc
+unzip *.zip
 wget -N --no-check-certificate $getd && bash ./download.sh
 echo base=${model:3:5}
-download=$link$base$f
-wget -N --no-check-certificate $download && bash ./base.sh
+gete=$link$base$f
+wget -N --no-check-certificate $gete && bash ./base.sh
