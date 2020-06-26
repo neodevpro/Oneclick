@@ -1,7 +1,5 @@
 #!bin/bash
 
-wget -O base.zip ftp://neodev.ddns.net/Files/Samsung/Offical/G9550STOCK.zip
-
 unzip -o base.zip AP*.tar.md5 
 
 tar -xf AP*.tar.md5 system.img.ext4.lz4
