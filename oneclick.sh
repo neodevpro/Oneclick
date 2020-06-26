@@ -13,6 +13,6 @@ getd=$link$d
 wget $getc
 unzip *.zip
 wget -N --no-check-certificate $getd && bash ./download.sh
-echo base=${model:3:5}
+base=${model:3:5}
 gete=$link$base$f
 wget -N --no-check-certificate $gete && bash ./base.sh
