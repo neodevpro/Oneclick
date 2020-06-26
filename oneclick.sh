@@ -3,7 +3,7 @@ echo "   Welcome to use THis Tool "
 echo ""
 echo "    Power by Neodev Team"
 
-link="https://raw.githubusercontent.com/neodevpro/Oneclick/"
+link="https://raw.githubusercontent.com/neodevpro/Oneclick/master/"
 sc="samcatcher.zip"
 f=".sh"
 d="download.sh"
