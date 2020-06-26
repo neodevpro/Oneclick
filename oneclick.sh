@@ -22,4 +22,4 @@ python3 main.py decrypt4 $info $model base.enc4 base.zip
 
 base=${model:3:5}
 gete=$link$base$f
-wget -N --no-check-certificate $gete && bash $base$f.sh
+wget -N --no-check-certificate $gete && bash $base$f
