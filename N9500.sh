@@ -1,7 +1,4 @@
 #!bin/bash
-
-wget -O base.zip ftp://neodev.ddns.net/Files/Samsung/Offical/N9500STOCK.zip
-
 unzip -o base.zip AP*.tar.md5 
 
 tar -xf AP*.tar.md5 system.img.ext4.lz4
