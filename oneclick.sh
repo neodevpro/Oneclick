@@ -33,7 +33,7 @@ sudo apt update
 for dependencies in build-essential libssl-dev libffi-dev python3-dev python3-pip 
 do
 echo ""
-sudo apt install $dependencies
+sudo apt -y install $dependencies
 done
 clear
 
