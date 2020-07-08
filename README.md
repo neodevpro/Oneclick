@@ -7,9 +7,9 @@ Support :</br>
 SM-G9500</br>
 SM-G9550</br>
 SM-N9500</br>
-</br>
 
-Command：
+
+Command：</br>
 ``
 sudo wget -N --no-check-certificate https://raw.githubusercontent.com/neodevpro/Oneclick/master/oneclick.sh && bash ./oneclick.sh
 ``
