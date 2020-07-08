@@ -38,7 +38,7 @@ done
 clear
 
 echo "Preparing proper library.."
-for pip3 in setuptools wheel progress clint simple-crypt aes
+for pip3 in setuptools wheel progress clint simple-crypt aes click
 do
 echo ""
 pip3 install $pip3
