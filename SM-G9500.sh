@@ -1,6 +1,6 @@
 #!bin/bash
 
-base=$($basefw.zip)
+base=$(cat firmware)
 
 unzip -o $base.zip AP*.tar.md5 
 
@@ -151,7 +151,7 @@ rm -rf system/preloadFotaOnly
 
 zip -r -y SM-G9500.zip META-INF rootzip system boot.img data
 
-sudo rm -rf data META-INF rootzip $base.zip boot.img system
+sudo rm -rf data META-INF rootzip boot.img system
 
 
 
