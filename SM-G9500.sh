@@ -1,6 +1,8 @@
 #!bin/bash
 
-unzip -o base.zip AP*.tar.md5 
+base=$($basefw.zip)
+
+unzip -o $base.zip AP*.tar.md5 
 
 tar -xf AP*.tar.md5 system.img.ext4.lz4
 
@@ -26,7 +28,7 @@ sudo umount tempsystem
 
 rm -rf tempsystem system.img
 
-unzip -o base.zip CSC*.tar.md5 
+unzip -o $base.zip CSC*.tar.md5 
 
 tar -xf CSC*.tar.md5 cache.img.ext4.lz4
 
@@ -149,7 +151,7 @@ rm -rf system/preloadFotaOnly
 
 zip -r -y SM-G9500.zip META-INF rootzip system boot.img data
 
-sudo rm -rf data META-INF rootzip base.zip boot.img system
+sudo rm -rf data META-INF rootzip $base.zip boot.img system
 
 
 
