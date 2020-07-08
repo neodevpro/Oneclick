@@ -30,7 +30,7 @@ echo ""
 
 echo "Preparing proper environment.."
 sudo apt update
-for dependencies in build-essential libssl-dev libffi-dev python3-dev python3-pip simg2img lz4
+for dependencies in build-essential libssl-dev libffi-dev python3-dev python3-pip simg2img liblz4-1
 do
 echo ""
 sudo apt install -y $dependencies
