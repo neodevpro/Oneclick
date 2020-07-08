@@ -63,7 +63,6 @@ rm -rf $name.enc4 main.py sam-get.zip samcatcher
 
 echo "You have download the firmware successfully "
 echo ""
-echo "odin file name : $name.zip "
 
 link="https://raw.githubusercontent.com/neodevpro/Oneclick/master/"
 f=".sh"
@@ -74,8 +73,10 @@ basefw=${model:0:8}
 gete=$link$basefw$f
 cat $name.zip >> base.zip
 wget -N --no-check-certificate $gete && sudo bash $basefw$f
+clear
 
 echo "You have port the rom successfully "
 echo ""
-echo "file name : $basefw.zip "
-
+echo "Samsung Odin Firmware Fame : $name.zip "
+echo ""
+echo "Custom Stock Rom Name : $basefw.zip "
