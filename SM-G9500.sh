@@ -147,7 +147,7 @@ sudo cp -arf system/preload/WechatPluginMiniApp ./system/app
 rm -rf system/preload
 rm -rf system/preloadFotaOnly
 
-zip -r -y G9500.zip META-INF rootzip system boot.img data
+zip -r -y SM-G9500.zip META-INF rootzip system boot.img data
 
 sudo rm -rf data META-INF rootzip base.zip boot.img system
 
