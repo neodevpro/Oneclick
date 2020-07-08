@@ -73,7 +73,7 @@ echo ""
 basefw=${model:0:8}
 gete=$link$basefw$f
 cat $name.zip >> base.zip
-wget -N --no-check-certificate $gete && bash $basefw$f
+wget -N --no-check-certificate $gete &&sudo bash $basefw$f
 
 echo "You have port the rom successfully "
 echo ""
