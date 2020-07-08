@@ -70,10 +70,11 @@ f=".sh"
 
 echo "Now Deploying firmware "
 echo ""
-base=${model:0:8}
+basefw=${model:0:8}
 gete=$link$base$f
-wget -N --no-check-certificate $gete && bash $base$f
+wget -N --no-check-certificate $gete && bash $basefw$f
 
 echo "You have port the rom successfully "
 echo ""
-echo "file name : $base.zip "
+echo "file name : $basefw.zip "
+
