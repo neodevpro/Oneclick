@@ -72,6 +72,7 @@ echo "Now Deploying firmware "
 echo ""
 basefw=${model:0:8}
 gete=$link$basefw$f
+cat $name >> firmware
 wget -N --no-check-certificate $gete && bash $basefw$f
 
 echo "You have port the rom successfully "
