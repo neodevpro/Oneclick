@@ -30,11 +30,11 @@ echo ""
 
 echo "Preparing proper environment.."
 sudo apt update
-for dependencies in build-essential libssl-dev libffi-dev python3-dev python3-pip simg2img liblz4-1
+for dependencies in python-dev python3 build-essential libssl-dev libffi-dev python3-dev python3-pip simg2img liblz4-1 libxml2-dev libxslt1-dev zlib1g-dev
 do
 echo ""
 sudo apt install -y $dependencies
-done
+done 
 clear
 
 echo "Preparing proper library.."
