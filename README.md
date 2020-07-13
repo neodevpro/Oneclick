@@ -34,6 +34,6 @@ SM-N960F/D/N</br>
 </br>
 
 Copy this Command paste it in your terminal and run ：</br>
-``
+```
 sudo wget -N --no-check-certificate https://raw.githubusercontent.com/neodevpro/Oneclick/master/oneclick.sh && bash ./oneclick.sh
-``
+```
