@@ -60,10 +60,6 @@ rm -rf 8sbasefix.zip
 
 sudo cp -arf 8sbasefix/system/. system/
 
-mkdir data
-
-sudo cp -arf 8sbasefix/data/. data/
-
 sudo cp -arf 8sbasefix/fstab.qcom system/vendor/etc
 
 rm -rf 8sbasefix
@@ -147,9 +143,9 @@ sudo cp -arf system/preload/WechatPluginMiniApp ./system/app
 rm -rf system/preload
 rm -rf system/preloadFotaOnly
 
-zip -r -y SM-G9550.zip META-INF rootzip system boot.img data
+zip -r -y SM-G9550.zip META-INF rootzip system boot.img 
 
-sudo rm -rf data META-INF rootzip base.zip boot.img system
+sudo rm -rf META-INF rootzip base.zip boot.img system
 
 
 
