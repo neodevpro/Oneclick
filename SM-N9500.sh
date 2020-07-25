@@ -5,7 +5,7 @@ tar -xf AP*.tar.md5 system.img.ext4.lz4
 
 rm -rf AP*.tar.md5 
 
-lz4 -d system.img.ext4.lz4
+lz4 -dc system.img.ext4.lz4
 
 rm -rf system.img.ext4.lz4
 
@@ -31,7 +31,7 @@ tar -xf CSC*.tar.md5 cache.img.ext4.lz4
 
 rm -rf CSC*.tar.md5
 
-lz4 -d cache.img.ext4.lz4
+lz4 -dc cache.img.ext4.lz4
 
 rm -rf cache.img.ext4.lz4
 
