@@ -95,7 +95,7 @@ echo "Mount System Image... "
 echo ""
 sudo mount -t ext4 -o loop system.img tempsystem/
 
-cp -arf tempsystem/* system/
+sudo cp -arf tempsystem/* system/
 
 sudo umount tempsystem
 
@@ -123,7 +123,7 @@ sudo mount -t ext4 -o loop cache.img cache/
 
 unzip -q cache/recovery/sec_csc.zip -d csc
 
-cp -arf csc/system/* system/
+sudo cp -arf csc/system/* system/
 
 sudo umount cache
 
@@ -177,16 +177,16 @@ fi
 
 echo "Configuring the System ... "
 echo ""
-sed -i "/ro.build.display.id/d" system/build.prop
-sed -i "3a\ro.build.display.id=Neo-Rom_Slim_0.4" system/build.prop
-sed -i "s/ro.config.tima=1/ro.config.tima=0/g" system/build.prop
-sed -i "s/ro.config.timaversion_info=Knox3.2_../ro.config.timaversion_info=0/g" system/build.prop
-sed -i "s/ro.config.iccc_version=3.0/ro.config.iccc_version=iccc_disabled/g" system/build.prop
-sed -i "s/ro.config.timaversion=3.0/ro.config.timaversion=0/g" system/build.prop
+sudo sed -i "/ro.build.display.id/d" system/build.prop
+sudo sed -i "3a\ro.build.display.id=Neo-Rom_Slim_0.4" system/build.prop
+sudo sed -i "s/ro.config.tima=1/ro.config.tima=0/g" system/build.prop
+sudo sed -i "s/ro.config.timaversion_info=Knox3.2_../ro.config.timaversion_info=0/g" system/build.prop
+sudo sed -i "s/ro.config.iccc_version=3.0/ro.config.iccc_version=iccc_disabled/g" system/build.prop
+sudo sed -i "s/ro.config.timaversion=3.0/ro.config.timaversion=0/g" system/build.prop
 
-sed -i "s/ro.config.dmverity=A/ro.config.dmverity=false/g" system/build.prop
-sed -i "s/ro.config.kap_default_on=true/ro.config.kap_default_on=false/g" system/build.prop
-sed -i "s/ro.config.kap=true/ro.config.kap=false/g" system/build.prop
+sudo sed -i "s/ro.config.dmverity=A/ro.config.dmverity=false/g" system/build.prop
+sudo sed -i "s/ro.config.kap_default_on=true/ro.config.kap_default_on=false/g" system/build.prop
+sudo sed -i "s/ro.config.kap=true/ro.config.kap=false/g" system/build.prop
 
 wget -q https://raw.githubusercontent.com/neodevpro/resources/master/add_to_buildprop.sh
 
