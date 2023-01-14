@@ -206,7 +206,7 @@ echo "Packing the Rom ... "
 echo ""
 sudo zip -r -q -y StockMod.zip META-INF system rootzip boot.img
 
-rm -rf META-INF system rootzip boot.img 
+sudo rm -rf META-INF system rootzip boot.img 
 
 echo "You have port the rom successfully " 
 echo ""
