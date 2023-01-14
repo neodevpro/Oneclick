@@ -194,9 +194,13 @@ sudo bash ./add_to_buildprop.sh
 
 wget -q https://raw.githubusercontent.com/neodevpro/resources/master/csc_tweaks.sh
 
-sh ./csc_tweaks.sh
+sudo sh ./csc_tweaks.sh
 
 rm -rf csc_tweaks.sh add_to_buildprop.sh
+
+wget -q https://raw.githubusercontent.com/neodevpro/resources/master/debloat.sh
+
+sudo sh ./debloat.sh
 
 echo "Packing the Rom ... "
 echo ""
