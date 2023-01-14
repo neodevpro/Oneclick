@@ -35,7 +35,7 @@ apt update
 apt install -y python-dev python3 build-essential libssl-dev libffi-dev python3-dev python3-pip simg2img liblz4-tool curl
 clear
 echo "Downloading Samloader.."
-pip3 install git+https://github.com/nlscc/samloader.git
+pip3 install git+https://github.com/samloader/samloader.git
 else
 echo "Skip dependencies Check."
 echo ""
