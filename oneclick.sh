@@ -93,11 +93,11 @@ rm -rf system.img.ext4
 
 echo "Mount System Image... "
 echo ""
-mount -t ext4 -o loop system.img tempsystem/
+sudo mount -t ext4 -o loop system.img tempsystem/
 
 cp -arf tempsystem/* system/
 
-umount tempsystem
+sudo umount tempsystem
 
 rm -rf tempsystem system.img
 
@@ -119,13 +119,13 @@ rm -rf cache.img.ext4
 
 mkdir cache
 
-mount -t ext4 -o loop cache.img cache/
+sudo mount -t ext4 -o loop cache.img cache/
 
 unzip -q cache/recovery/sec_csc.zip -d csc
 
 cp -arf csc/system/* system/
 
-umount cache
+sudo umount cache
 
 rm -rf cache csc cache.img
 
