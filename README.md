@@ -17,6 +17,14 @@ SM-G9500</br>
 SM-G9550</br>
 SM-N9500</br>
 </br>
+SM-SC02J</br>
+SM-SC03J</br>
+SM-SC01K</br>
+</br>
+SM-SCV35</br>
+SM-SCV36</br>
+SM-SCV37</br>
+</br>
 Planing devices (Need beta tester) :</br>
 SM-G950F/D/N</br>
 SM-G955F/D/N</br>
