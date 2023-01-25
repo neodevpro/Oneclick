@@ -67,7 +67,7 @@ echo "You have download the firmware successfully "
 echo ""
 clear
 
-if [[ "$model" == *"SM-G9500"* || "$model" == *"SM-G9550"* || "$model" == *"SM-N9500"* ]] ; then
+if [[ "$model" == *"SM-G9500"* || "$model" == *"SM-G9550"* || "$model" == *"SM-N9500"* || "$model" == *"SM-SCV35"* || "$model" == *"SM-SCV36"* || "$model" == *"SM-SCV37"* || "$model" == *"SM-SC02J"* || "$model" == *"SM-SC03J"* || "$model" == *"SM-SC01K"* ]] ; then
 echo "Now Deploying firmware "
 echo ""
 echo "Extrating System Image... "
@@ -143,7 +143,7 @@ rm -rf 8sbasefix
 
 echo "Downloding Installation Scripts ... "
 echo ""
-if [[ "$model" == *"SM-G9500"* || "$model" == *"SM-G9550"* ]] ; then
+if [[ "$model" == *"SM-G9500"* || "$model" == *"SM-G9550"*  || "$model" == *"SM-SCV35"* || "$model" == *"SM-SCV36"* || "$model" == *"SM-SC02J"* || "$model" == *"SM-SC03J"* ]] ; then
 wget -q https://raw.githubusercontent.com/neodevpro/resources/master/s8sflash.zip
 unzip -q s8sflash.zip
 rm -rf s8sflash.zip
@@ -165,11 +165,11 @@ sudo wget -q -O system/preload/Magisk/Magisk.apk https://github.com/topjohnwu/Ma
 
 echo "Downloding ${model:0:8} Kernel ... "
 echo ""
-if [[ "$model" == *"SM-G9500"* ]] ; then 
+if [[ "$model" == *"SM-G9500"*  || "$model" == *"SM-SC02J"*  || "$model" == *"SM-SCV36"*  ]] ; then 
 wget -q -O boot.img https://raw.githubusercontent.com/neodevpro/resources/master/G9500.img
-elif [[ "$model" == *"SM-G9550"* ]] ; then 
+elif [[ "$model" == *"SM-G9550"* || "$model" == *"SM-SC03J"*  || "$model" == *"SM-SCV35"*  ]] ; then 
 wget -q -O boot.img https://raw.githubusercontent.com/neodevpro/resources/master/G9550.img
-elif [[ "$model" == *"SM-N9500"* ]] ; then 
+elif [[ "$model" == *"SM-N9500"* || "$model" == *"SM-SC01K"*  || "$model" == *"SM-SCV37"*  ]] ; then 
 wget -q -O boot.img https://raw.githubusercontent.com/neodevpro/resources/master/N9500.img
 fi
 
