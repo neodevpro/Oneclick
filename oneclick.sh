@@ -32,12 +32,11 @@ echo -n "Checking dependencies... "
 echo ""
 echo "Preparing proper environment.." 
 apt update
-apt install -y python2-dev python2 python3 build-essential libssl-dev libffi-dev python3-dev python3-pip simg2img liblz4-tool curl nodejs npm
+apt install -y python2-dev python2 python3 build-essential libssl-dev libffi-dev python3-dev python3-pip simg2img liblz4-tool curl cargo
 clear
-echo "Downloading Samloader.."
-pip3 install git+https://github.com/samloader/samloader.git
-echo "Ready Samfirm.."
-sudo npm i -g samfirm
+echo "Downloading Tools.."
+cargo install --git https://github.com/FusionPlmH/frigg-update.git
+export PATH=/root/.cargo/bin:$PATHecho "Ready Samfirm.."
 else
 echo "Skip dependencies Check."
 echo ""
@@ -47,25 +46,17 @@ clear
  
 echo "Enter Model(Example:SM-G9550): "
 read model
-echo "Enter Region (Example:CHC): "
+echo "Enter Region (Example:TGY): "
 read region
+echo "Enter IMEI (Example:354763080305191): "
+read imei
 echo ""
+version=$(frigg check -m $model -r $region --imei $imei | grep Version | cut -c 1-25 --complement)
 # check=$(samloader -m $model -r $region checkupdate)
-echo "Dowloading firmware..."
-samfirm -m $model -r $region
-input=$(find -name "$model*.zip.enc4" | tee log)
-cat log > tmpf
-sed -i 's/.enc4//' tmpf
-name=$(cat tmpf)
-echo ""
-echo "Decrypting firmware..."
-samloader -m $model -r $region decrypt -v $check -V 4 -i $input -o $name
+echo "Dowloading and Decrypting  firmware..."
+frigg download -m $model -r $region  --imei $imei
+name=$(find -name "$model*.zip")
 echo "Done!.."
-echo ""
-
-echo ""
-rm -rf log tmpf $input
-echo "You have download the firmware successfully "
 echo ""
 clear
 
