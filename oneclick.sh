@@ -36,7 +36,7 @@ apt install -y python2-dev python2 python3 build-essential libssl-dev libffi-dev
 clear
 echo "Downloading Tools.."
 cargo install --git https://github.com/FusionPlmH/frigg-update.git
-export PATH=/root/.cargo/bin:$PATHecho "Ready Samfirm.."
+export PATH=/root/.cargo/bin:$PATH
 else
 echo "Skip dependencies Check."
 echo ""
@@ -52,7 +52,6 @@ echo "Enter IMEI (Example:354763080305191): "
 read imei
 echo ""
 version=$(frigg check -m $model -r $region --imei $imei | grep Version | cut -c 1-25 --complement)
-# check=$(samloader -m $model -r $region checkupdate)
 echo "Dowloading and Decrypting  firmware..."
 frigg download -m $model -r $region  --imei $imei
 name=$(find -name "$model*.zip")
