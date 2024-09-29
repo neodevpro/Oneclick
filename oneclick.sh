@@ -51,7 +51,7 @@ packages=(
     "unzip"
 )
 
-apt update
+sudo apt update
 
 # Loop through each package and install it using apt
 for package in "${packages[@]}"; do
