@@ -31,9 +31,39 @@ if [ $check = "y" ] ; then
 echo -n "Checking dependencies... "
 echo ""
 echo "Preparing proper environment.." 
+
+packages=(
+    "android-sdk-libsparse-utils"
+    "dh-python"
+    "pkg-config"
+    "python2-dev"
+    "python2"
+    "python3"
+    "build-essential"
+    "libssl-dev"
+    "libffi-dev"
+    "python3-dev"
+    "python3-pip"
+    "simg2img"
+    "liblz4-tool"
+    "curl"
+    "cargo"
+    "unzip"
+)
+
 apt update
-apt install -y python2-dev python2 python3 build-essential libssl-dev libffi-dev python3-dev python3-pip simg2img liblz4-tool curl cargo
-clear
+
+# Loop through each package and install it using apt
+for package in "${packages[@]}"; do
+    echo "Installing $package using apt..."
+    if sudo apt install -y "$package"; then
+        echo "$package installed successfully."
+    else
+        echo "Failed to install $package. It may not be available in the repository."
+    fi
+done
+
+
 echo "Downloading Tools.."
 cargo install --git https://github.com/FusionPlmH/frigg-update.git
 export PATH=/root/.cargo/bin:$PATH
