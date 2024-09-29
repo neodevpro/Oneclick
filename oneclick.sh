@@ -67,7 +67,7 @@ done
 
 
 echo "Downloading Tools.."
-cargo install --git https://github.com/FusionPlmH/frigg-update.git
+cargo install --git https://github.com/FusionPlmH/frigg-update.git --force
 export PATH=/root/.cargo/bin:$PATH
 else
 echo "Skip dependencies Check."
