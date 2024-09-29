@@ -49,6 +49,8 @@ packages=(
     "curl"
     "cargo"
     "unzip"
+    "zip"
+
 )
 
 sudo apt update
